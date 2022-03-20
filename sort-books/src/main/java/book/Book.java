@@ -23,10 +23,10 @@ public class Book implements Comparable<Book> {
 
     @Override
     public String toString() {
-        return "Book name : " + bookName
-                + " number of pages " + numberOfPages
-                + "author name " + authorName
-                + "release date " + releaseYear;
+        return " Book name : " + bookName
+                + " number of pages : " + numberOfPages
+                + " author name : " + authorName
+                + " release date : " + releaseYear;
     }
 
     @Override
