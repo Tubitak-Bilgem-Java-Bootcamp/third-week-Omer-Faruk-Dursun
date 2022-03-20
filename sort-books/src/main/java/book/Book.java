@@ -1,6 +1,6 @@
 package book;
 
-public class Book implements Comparable {
+public class Book implements Comparable<Book> {
     private final String bookName;
     private final int numberOfPages;
     private final String authorName;
@@ -21,14 +21,6 @@ public class Book implements Comparable {
         return numberOfPages;
     }
 
-    public String getAuthorName() {
-        return authorName;
-    }
-
-    public int getReleaseDate() {
-        return releaseYear;
-    }
-
     @Override
     public String toString() {
         return "Book name : " + bookName
@@ -38,7 +30,7 @@ public class Book implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Book book) {
+        return this.bookName.compareTo(book.getBookName());
     }
 }
