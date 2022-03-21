@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter your e-mail and password:");
+        System.out.println("Please enter your e-mail:");
         String userEmail = scanner.nextLine();
         System.out.println("----------------------");
+        System.out.println("Please enter your password:");
         String userPassword = scanner.nextLine();
-        System.out.println("----------------------");
 
         Account currentUser = AccountManager.login(userEmail, userPassword);
 
