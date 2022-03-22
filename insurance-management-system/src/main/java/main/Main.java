@@ -2,6 +2,7 @@ package main;
 
 import account.Account;
 import account.AccountManager;
+import account.InvalidAuthenticationException;
 
 import java.util.Scanner;
 
@@ -16,7 +17,13 @@ public class Main {
         System.out.println("Please enter your password:");
         String userPassword = scanner.nextLine();
 
-        Account currentUser = AccountManager.login(userEmail, userPassword);
+        Account currentUser = null;
+        try {
+            currentUser = AccountManager.login(userEmail, userPassword);
+        } catch (InvalidAuthenticationException e) {
+            System.out.println("Exception occurred: " + e);
+        }
+
 
         System.out.println("Welcome to the Patika Insurance " +
                 currentUser.getUser().getName() +
@@ -24,7 +31,7 @@ public class Main {
 
         boolean flag = true;
 
-        while(flag){
+        while (flag) {
             System.out.println("1. Add a new insurance");
             System.out.println("2. List your existing insurances");
             System.out.println("3. Add a new address to the system");
@@ -34,7 +41,7 @@ public class Main {
 
             int userInput = scanner.nextInt();
 
-            switch (userInput){
+            switch (userInput) {
                 case 0:
                     flag = false;
                     break;
@@ -51,7 +58,7 @@ public class Main {
 
                     break;
                 case 5:
-
+                    currentUser.showUserInfo();
                     break;
             }
         }

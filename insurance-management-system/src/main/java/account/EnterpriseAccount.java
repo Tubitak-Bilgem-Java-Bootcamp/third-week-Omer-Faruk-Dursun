@@ -16,8 +16,8 @@ public class EnterpriseAccount extends Account {
     }
 
     @Override
-    void addInsurance() {
-
+    void addInsurance(Insurance insurance) {
+        this.getInsuranceList().add(insurance);
     }
 
     @Override

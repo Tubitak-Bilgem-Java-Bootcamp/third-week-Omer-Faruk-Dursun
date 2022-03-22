@@ -34,10 +34,18 @@ public abstract class Account implements Comparable {
         return insuranceList;
     }
 
-    final void showUserInfo() {
+    public final void showUserInfo() {
+        String str = "User name : " + getUser().getName() + " " + getUser().getSurname() +
+                " profession : " + getUser().getProfession();
+
+        for(Address address : getUser().getListOfAddress()) {
+            str += address.returnFullAddress();
+        }
+
+        System.out.println(str);
     }
 
-    public Account login(){
+    public Account login() {
         authenticationStatus = AuthenticationStatus.SUCCESS;
         return this;
     }
@@ -46,5 +54,5 @@ public abstract class Account implements Comparable {
         user.addAddress(address);
     }
 
-    abstract void addInsurance();
+    abstract void addInsurance(Insurance insurance);
 }

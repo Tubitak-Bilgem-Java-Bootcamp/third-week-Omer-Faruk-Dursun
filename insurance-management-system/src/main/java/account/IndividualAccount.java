@@ -16,8 +16,8 @@ public class IndividualAccount extends Account {
     }
 
     @Override
-    void addInsurance() {
-
+    void addInsurance(Insurance insurance) {
+        this.getInsuranceList().add(insurance);
     }
 
     @Override

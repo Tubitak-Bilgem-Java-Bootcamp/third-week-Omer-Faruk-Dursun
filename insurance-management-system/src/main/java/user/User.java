@@ -2,6 +2,7 @@ package user;
 
 import address.Address;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -12,10 +13,10 @@ public class User {
     private String password;
     private String profession;
     private int age;
-    private Address[] listOfAddress;
+    private ArrayList<Address> listOfAddress;
     private Date lastLogin;
 
-    public User(int userId, String name, String surname, String email, String password, String profession, int age, Address[] listOfAddress) {
+    public User(int userId, String name, String surname, String email, String password, String profession, int age, ArrayList<Address> listOfAddress) {
         this.userId = userId;
         this.name = name;
         this.surname = surname;
@@ -54,7 +55,7 @@ public class User {
         return age;
     }
 
-    public Address[] getListOfAddress() {
+    public ArrayList<Address> getListOfAddress() {
         return listOfAddress;
     }
 
