@@ -108,7 +108,8 @@ public class MyList<T> {
     }
 
     public void clear() {
-        //TO-DO
+        currentSize = 0;
+        mainArray = new Object[DEFAULT_CAPACITY];
     }
 
     public MyList<T> sublist(int start, int finish) {
